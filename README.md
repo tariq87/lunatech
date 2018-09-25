@@ -6,10 +6,10 @@
 4) You can run this from your local machine as well give that you have terraform and ansible installed (along with anyother dependency)
 
 Configure your awscli
-# aws configure
+aws configure
 
 Install Ansible
-# pip install ansible
+pip install ansible
 
 Download and install Terraform for your system (linux, mac or windows)
 
