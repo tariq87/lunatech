@@ -1,0 +1,21 @@
+---
+- name: create directory
+  file:
+     path: /mnt/app1
+     state: directory
+     mode: 0755
+
+- name: download jar file
+  get_url: url="https://s3-eu-west-1.amazonaws.com/devops-assesment/countries-assembly-1.0.1.jar" dest=/mnt/app1
+
+- name: Run Java application
+  command: bash -lc "cd /mnt/app1 && nohup java -jar countries-assembly-1.0.1.jar &"
+
+- name: create nginx conf file
+  template:
+     src: nginx_app1.j2
+     dest: /etc/nginx/nginx.conf
+
+- name: Start nginx service
+  service: name=nginx state=started enabled=yes
+
