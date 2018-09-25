@@ -146,7 +146,12 @@ resource "aws_security_group" "elb" {
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
+  ingress {
+    from_port = 8000
+    to_port = 8000
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+	}
 }
 
 
@@ -166,7 +171,7 @@ resource "aws_elb" "myelb" {
 
 
   listener {
-    lb_port = 80
+    lb_port = 8000
     lb_protocol = "http"
     instance_port = 80
     instance_protocol = "http"
