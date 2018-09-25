@@ -20,3 +20,13 @@ Download and install Terraform for your system (linux, mac or windows)
 4) run "terraform plan"
 5) Once plan is successful, run "terraform apply"
 6) Make the get calls to api's using the dns of the ELB -> eg: http://my-elb-lunatech:8000/countries or airports
+
+
+# Summary
+There are few points to keep in mind.
+For ansible to work, create a key-pair using ssh-keygen and put it in the instance getting launched via terraform.
+I used userdata to do that, something like
+echo "mysshkey.pub" >> ~/.ssh/authorized_keys
+else your automation is bound to fail.
+Please feel free to edit this document for any changes.
+
