@@ -3,7 +3,7 @@
 1) This setup is tested on amazon linux
 2) Should have AWS account 
 3) An AWS user with credentials having enough access to perform the operations.
-4) You can run this from your local machine as well give that you have terraform and ansible installed (along with anyother dependency)
+4) You can run this from your local machine as well given that you have terraform and ansible installed (along with anyother dependency)
 
 Configure your awscli
 aws configure
